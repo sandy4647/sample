@@ -1,0 +1,562 @@
+/*
+Theme Name: Fight Covid Theme
+Author: LTI
+Description: Theme for Fight Covid website
+Version: 1.0
+*/
+/*Header css start*/
+.fight-covid-title{
+    font-size: 25px;
+    font-family: inherit;
+    color: #325890;
+}
+.emg-resource-btn {
+    background-color:#fa770b !important;
+    background-color: #fa770b !important;
+    border: 1px #fa770b !important;
+    border-radius: 4px;
+    color: white;
+    height: 70vh;
+    width: 12rem;
+    margin-left: 30px;
+}
+/*Header css end*/
+
+body{
+    margin-right: 12px !important;
+}
+a{
+    color: white;
+}
+.landingpage-container{
+    background-image: url('../assets/Banner_Images/Main\ Banner.png');
+    background-repeat: no-repeat;
+}
+.fight_covid_img{
+    height: 7vh;
+    margin: 10px 0px 10px 80px;
+}
+.emg-resource-btn {
+    background-color:#F46E00 !important;
+    background-color: #F46E00 !important;
+    border: 1px #F46E00 !important;
+    border-radius: 4px;
+    color: white;
+    width: 225px;
+    height: 35px;
+    margin-top: 15px;
+    font-family: 'BwModelicaSS01-Medium';
+}
+.card-container{margin: 70px 0px 0px 110px !important;} .cardlayout{
+    max-width: 10rem;
+    height: 10rem;
+    color: white;
+    background-color: #00008C !important;
+    border-radius: 12px !important;
+    box-shadow: 7px 7px 10px #123E9F4D !important;
+}
+.card-title{
+    margin: 15px 0px 0px 16px;
+    font-size: 16px;
+    font-family: 'BwModelicaSS01-Medium';
+}
+.card-container a{
+    text-decoration: none !important;
+    color: white;
+}
+.cardlayout a:hover{
+    color: white;
+}
+.card-svg{
+    margin-left: 12px;
+}
+a.svg:after {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+}
+.card-custom-footer{
+    font-size: 14px;
+    font-family: 'BwModelicaSS01-Medium';
+    margin: 10px 0px 0px 3px;
+}
+.content-form{
+    z-index: 1;
+    border: 1px solid #909EC5;
+    padding: 12px;
+    margin-top: 40px !important;
+    width: 87%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 6px 6px 10px #0042ff26;
+    border-radius: 5px;
+}
+.content-form .form-title{
+    font-size: 20px;
+    margin-top: 10px;
+    color: #001EFF;
+    font-family: 'BwModelicaSS02-Bold';
+}
+.content-form .form-subtitle{
+    font-size: 13px;
+    margin-top: 5px;
+    color: #3B3B3B;
+    font-family: 'BwModelicaSS01-Regular';
+}
+.content-form .form-label{
+    font-family: 'BwModelicaSS01-Bold';
+    color: #484848;
+}
+.content-form .form-select{
+    border: 1px #00000000;
+    background-image: url('../assets/Icons\ and\ Logos/Drop down 1.svg');
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 12px 10px;
+    font-family: 'BwModelicaSS01-Regular';
+
+}
+.content-form .form-select, .form-control {
+    background-color: #E6E6E6 !important;
+    font-size: 14px !important;
+    border-radius: 5px;
+    color: #233E8B;
+    font-family: 'BwModelicaSS01-Regular';
+}
+.get-content-btn .btn-primary{
+    background-color: #001EFF;
+    color: white;
+    width: 160px;
+    height: 35px;
+    border-radius: 5px;
+    border: #001EFF;
+    font-family: 'BwModelicaSS01-Medium';
+    font-size: 15px;
+}
+option:not(:first-of-type) {
+    color: black;
+    background-color: white;
+}
+.landingpage-footer{
+    margin-top: 520px !important;
+}
+.landingpage-footer-content{
+    margin-top: 130px !important;
+    padding-left: 80px !important;
+}
+.landingpage-footer-content a, a:hover{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+.landingpage-footer-content a:hover{
+    color: white;
+}
+
+.landingpage-footer-content .coming_soon{
+    color: #00008C;
+    background-color: white;
+    width: 240px;
+    height: 40px;
+    font-family: 'BwModelicaSS02-Bold';
+    font-size: 15px;
+    border: 2px solid var(--unnamed-color-00008c);
+    border: 2px solid #00008C;
+    border-radius: 5px;
+}
+.carousel-caption-img1 {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    top: 55px;
+    left: 40%;
+    padding-bottom: 1.25rem;
+}
+.carousel-caption-img2{
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    top: 60px;
+    left: 37%;
+    padding-bottom: 1.25rem;
+}
+.carousel-caption-img3{
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    top: 60px;
+    left: 40%;
+    padding-bottom: 1.25rem;
+}
+.carousel-caption-img4{
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    top: 45px;
+    left: 40%;
+    padding-bottom: 1.25rem;
+}
+.carousel-title{
+    color: #3B3B3B;
+    font-family: 'BwModelicaSS01-Regular';
+    font-size: 28px;
+}
+.carousel-subtitle{
+    color: #3B3B3B;
+    font-family: 'BwModelicaSS02-BoldItalic';
+    font-size: 28px;
+}
+.carousel-para{
+    padding-top: 5px;
+    font-family: BwModelicaSS01-Regular;
+    font-size: 15px;
+}
+.conatainer{
+    width: 1335px;
+    height: 460px;
+    /* position: relative; */
+}
+#carouselExampleFade{
+    width: 100%;
+    height: 100%;            
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    padding-top: 65px;
+}
+.box-overlay{
+    z-index: 10;
+    width: 30%;
+    height: 119%;
+    margin-left: 920px;
+    padding-top: 20px;
+    /* background-color: white;
+    border: 1px solid black; */
+}
+.box-overlay1{
+    z-index: 10;
+    margin-top: -260px !important;
+}
+/*Personalized css*/
+body{
+    margin-right: 12px !important;
+}
+h5{
+    font-size: 16px !important;
+}
+.emg-resource-btn {
+    background-color:#F46E00 !important;
+    background-color: #F46E00 !important;
+    border: 1px #F46E00 !important;
+    border-radius: 4px;
+    color: white;
+    width: 225px;
+    height: 35px;
+    margin-top: 15px;
+    font-family: 'BwModelicaSS01-Medium';
+}
+.fight_covid_img{
+    height: 7vh;
+    margin: 10px 0px 10px 80px;
+}
+/* .personalised-header{
+    position: fixed;
+    z-index: 5;
+    width: 102%
+} */
+.padding-10{
+    padding-top: 10px;
+}
+.margin-15{
+    margin-top: 15px;
+}
+.personalised-title{
+    color: #00008C;
+    font-size: 35px;
+    font-family: 'BwModelicaSS02-Bold';
+}
+.personalised-container{
+    background-image: url('../assets/Banner_Images/All\ resource\ &\ personalized\ content\ Banner-common\ for\ both.png');
+    background-repeat: no-repeat;
+    height: 51vh;
+    padding-left: 80px !important;
+    background-size: cover;
+}
+.personalised-container a{
+    text-decoration: none;
+    color: #325890;
+    width: 30px;
+}
+.personalised-form{
+    border: 1px solid var(--unnamed-color-dadada);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DADADA;
+    padding: 15px 0px 15px 70px;
+}
+.personalised-form .form-label{
+    font-family: 'BwModelicaSS01-Regular';
+    color: #484848;
+    font-size: 14px;
+}
+.personalised-form .form-select{
+    border: 1px #00000000;
+    background-image: url('../assets/Icons\ and\ Logos/Drop down 1.svg');
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 10px 8px;
+    font-family: 'BwModelicaSS01-Regular';
+
+}
+.personalised-form .form-select, .form-control {
+    font-size: 14px !important;
+    border-radius: 5px;
+    color: #233E8B;
+    font-family: 'BwModelicaSS01-Regular';
+    border: 1px solid #889ECF;
+}
+.get-content-btn .btn-primary{
+    background-color: #001EFF;
+    color: white;
+    width: 160px;
+    height: 35px;
+    border-radius: 5px;
+    border: #001EFF;
+    font-family: 'BwModelicaSS01-Medium';
+    font-size: 15px;
+}
+/* Nav-bar classes */
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #00008C !important;
+  }
+  @media only screen and (min-width: 960px) {
+    .navbar .navbar-nav .nav-link {
+      padding: 1em 0.7em;
+    }
+    .navbar {
+      padding: 0;
+    }
+    .navbar .navbar-brand {
+      padding: 0 0.7em;
+    }
+  }
+  .navbar .navbar-nav .nav-link {
+    position: relative;
+  }
+  .navbar .navbar-nav .nav-link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #00008C;
+    color: transparent;
+    width: 0%;
+    content: '';
+    height: 3px;
+    transition: all 0.5s;
+  }
+  .navbar .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+.margin-left{
+    margin-left: 110px;
+}
+/* Nav-bar classes end */
+
+.footer-title{
+    font-size: 14px;
+    color: white;
+    margin-left: 70px;
+    margin-top: 15px;
+    font-family: 'BwModelicaSS01-Regular'
+}
+.footer-content a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.footer-content a:hover{
+    color: white;
+}
+.accordion-header{
+    background: #00008C 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000026;
+    color: white;
+    padding: 10px 0px 10px 25px;
+    font-family: 'BwModelicaSS02-Bold';
+    font-size: 20px;
+}
+.accordion-body {
+    padding: 1rem 1.25rem;
+    font-family: 'BwModelicaSS01-Medium';
+    color: #3D3D3D;
+}
+.personalised-navigator a{
+    font-family: cursive;
+    font-size: 17px;
+    color: black;
+}
+.personalised-navigator{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 0px 0px 10px 60px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+  }
+.personalised-accordion-container{
+    margin: 30px 20px 20px 55px !important;
+}
+.border-bottom{
+    border-bottom: 1px lightgrey;
+}
+.accordion-button{
+    font-size: 22px !important;
+    color: white !important;
+    background-color: #30a770 !important;
+    font-family: monospace;
+    border-radius: 4px !important;
+}
+.accordion-button::after{
+    content: none !important;
+}
+.read-btn{
+    color: #001EFF !important;
+    background-color: white !important;
+    width: 7rem;
+    border: 1px solid #001EFF !important;
+    border-radius: 5px !important;
+}
+ul.navbar-nav li:first-child {
+text-align:left !important;
+}
+
+/*Personalized cssend*/
+/*Stay Protected css start*/
+body{
+  margin-right: 12px !important;
+}
+.emg-resource-btn {
+    background-color:#F46E00 !important;
+    background-color: #F46E00 !important;
+    border: 1px #F46E00 !important;
+    border-radius: 4px;
+    color: white;
+    width: 225px;
+    height: 35px;
+    margin-top: 15px;
+    font-family: 'BwModelicaSS01-Medium';
+}
+.footer-content a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.footer-content a:hover{
+    color: white;
+}
+.fight_covid_img{
+    height: 7vh;
+    margin: 10px 0px 10px 80px;
+}
+.footer-title{
+    font-size: 14px;
+    color: white;
+    margin-left: 70px;
+    margin-top: 15px;
+    font-family: 'BwModelicaSS01-Regular'
+}
+.stay-protected-container{
+    background-image: url('../assets/Banner_Images/All\ resource\ &\ personalized\ content\ Banner-common\ for\ both.png');
+    background-repeat: no-repeat;
+    height: 51vh;
+    padding-left: 80px !important;
+    background-size: cover;
+}
+.stay-protected-title{
+    color: #00008C;
+    font-size: 35px;
+}
+.stay-protected-navigator{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 10px 0px 10px 60px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+}
+/* Nav-bar classes */
+.navbar .navbar-nav .nav-link:hover {
+    color: #00008C !important;
+  }
+  @media only screen and (min-width: 960px) {
+    .navbar .navbar-nav .nav-link {
+      padding: 1em 0.7em;
+    }
+    .navbar {
+      padding: 0;
+    }
+    .navbar .navbar-brand {
+      padding: 0 0.7em;
+    }
+  }
+  .navbar .navbar-nav .nav-link {
+    position: relative;
+  }
+  .navbar .navbar-nav .nav-link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #00008C;
+    color: transparent;
+    width: 0%;
+    content: '';
+    height: 3px;
+    transition: all 0.5s;
+  }
+  .navbar .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+.margin-left{
+    margin-left: 70px;
+}
+.accordion-header{
+    background: #00008C 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000026;
+    color: white;
+    padding: 10px 0px 10px 25px;
+    font-family: 'BwModelicaSS02-Bold';
+    font-size: 20px;
+}
+/* Nav-bar classes end */
+
+.accordion-container{
+  margin: 30px 20px 20px 55px !important;
+}
+.accordian-read-more{
+  color: #00008C;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 20px;
+  font-family: 'BwModelicaSS01-Bold';
+  cursor: pointer;
+}
+#expand-read-more{
+  display:none;
+  height:200px;
+}
+.accordian-read-more:focus + div#expand-read-more {
+  display: block;
+}
+
+/*Stay Protected css end*/
