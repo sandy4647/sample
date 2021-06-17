@@ -10,26 +10,25 @@
 				<div class="carousel-item active">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/Banner_Images/Main Banner.png" class="d-block w-100" alt="...">
 					<div class="carousel-caption-img1 d-none d-md-block">
-						<h2 class="carousel-title">Together,</h2>
-						<h2 class="carousel-subtitle">We Can !</h2>
+						<h2 class="carousel-title">Together, We Can !</h2>
+						<h2 class="carousel-subtitle">In this fight, we are all together</h2>
 						<p class="carousel-para">
-							This portal has been designed with a motive <br>
-							to keep you and your loved once protected. <br>
-							We have curated comprehensive and <br>
-							essential information related to Covid - 19. <br><br>
-							In this fight, we all are together #StaySafe
+							Browse through the curated list of<br>
+							important resources and esential<br>
+							information related to Covid-19, and<br>
+							keep you and your loved ones safe #StaySafe<br>
 						</p>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/Banner_Images/Emergency info Banner.png" class="d-block w-100" alt="...">
 					<div class="carousel-caption-img2 d-none d-md-block">
-						<h2 class="carousel-title">Emergency</h2>
-						<h2 class="carousel-subtitle">Resources</h2>
+						<h2 class="carousel-title">Emergency Resources</h2>
+						<h2 class="carousel-subtitle"></h2>
 						<p class="carousel-para">
-							Check this to know about emergency<br>
-							resources like availability of hospital <br>
-							beds, ICUs and other related resources.<br>
+							Check out the emergency resources<br>
+							to know the status and availability of<br>
+							hospital beds, oxygen, medicines and more<br>
 						</p>
 					</div>
 				</div>
@@ -37,12 +36,13 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/Banner_Images/Personalized page info Banner.png" class="d-block w-100"
 						alt="...">
 					<div class="carousel-caption-img3 d-none d-md-block">
-						<h2 class="carousel-title">Personalise</h2>
-						<h2 class="carousel-subtitle">your Content</h2>
+						<h2 class="carousel-title">Personalized Resources</h2>
+						<h2 class="carousel-subtitle"></h2>
 						<p class="carousel-para">
-							Not sure about what to look for? Access<br>
-							useful content that will suite your need<br>
-							just by answering few simple questions.<br>
+							Not sure what to look for?<br> 
+							Access important guidelines and<br>
+							information as per your need, by <br>
+							answering a few questions about your status<br>
 						</p>
 					</div>
 				</div>
@@ -60,26 +60,37 @@
 				</div>
 			</div>
 		</div>
+<?php
+global $wpdb;
+	$cityname = "SELECT DISTINCT meta_value 
+		FROM   wp_posts p
+		INNER JOIN wp_postmeta pm
+		  ON (p.ID = pm.post_id) 
+		WHERE p.post_type = 'contentdata' 
+		AND (p.post_status = 'publish')
+		AND (pm.meta_key = 'city') 
+
+		";
+$city = $wpdb->get_results( $cityname, OBJECT );	
+foreach ($city as $value) {
+    $citynames[] = $value->meta_value;
+}
+?>
 
 		<div class="box-overlay">
 			<div class="row content-form">
 				<div class="col-md-12 form-title"><b>Get Personalized View<br> of Resources</b></div>
 				<div class="col-md-12 form-subtitle">You data is Safe with us. It won't be saved</div>
-				<form class="col-md-12 g-3" style="margin-left: 5px;padding-right: 15px;font-size: 13px;" method="post" action="http://localhost/fightcovid/personalised-content/">
+				<form class="col-md-12 g-3" style="margin-left: 5px;padding-right: 15px;font-size: 13px;" method="post" action="<?php echo get_site_url(); ?>/personalised-content/">
 					<div class="mb-2">
 						<label for="inputCity" class="form-label">City<span style="color: #FF5E5E;">*</span></label>
 						<select id="inputCity" class="form-select" name="city" required>
 							<option hidden value="" style="color: #233E8B;">Select your city</option>
-							<option value="Bangalore">Bangalore</option>
-							<option value="Chennai">Chennai</option>
-							<option value="Mumbai">Mumbai</option>
+							<?php foreach($citynames as $value){?>
+								<option value="<?php echo $value; ?>"><?php echo $value; ?></option><?php
+							} ?>
 						</select>
 					</div>
-					<!--<div class="mb-2">
-						<label for="inputZip" class="form-label">Pin Code<span style="color: #FF5E5E;">*</span></label>
-						<input type="text" class="form-control" id="inputZip" placeholder="Enter your Pincode"
-							style="color: #233E8B;" name="pincode" required>
-					</div>-->
 					<div class="mb-2">
 						<label for="inputAge" class="form-label">Age Group<span style="color: #FF5E5E;">*</span></label>
 						<select id="inputAge" class="form-select" name="Age" required>
@@ -92,7 +103,7 @@
 					<div class="mb-2">
 						<label for="inputStatus" class="form-label">Living Status<span
 								style="color: #FF5E5E;">*</span></label>
-						<select id="inputStatus" class="form-select" namr="livingstatus" required>
+						<select id="inputStatus" class="form-select" name="livingstatus" required>
 							<option hidden value="">Select your Living Status</option>
 							<option value="Alone">Living Alone</option>
 							<option value="Someone">Living with Someone</option>

@@ -52,20 +52,23 @@
                     <!--<div class="row">
                         <h5 style="color:black; margin-top: 10px;font-family: 'BwModelicaSS02-Bold';">DOs</h5>
                     </div>-->
+					<?php 
+					$content = explode('<span>',$value);
+					?>
+					
                     <div class="row" style="margin-top: 10px;">
-                        <div class="col-md-12 padding-10">
+                        <div class="col-md-6 padding-10">
                             <!--<h6 style="font-family: 'BwModelicaSS01-Bold';">Sanitization</h6>-->
-                            <p style="font-size: 14px;font-family: 'BwModelicaSS01-Regular';"><?php echo $value; ?></p>
+                            <p style="font-size: 14px;font-family: 'BwModelicaSS01-Regular';"><?php echo $content[1]; ?></p>
                         </div>
-                        <!--<div class="col-md-6">
-                            <p style="font-size: 14px;font-family: 'BwModelicaSS01-Regular';"></p>
-                        </div>-->
+                        <div class="col-md-6">
+                            <p style="font-size: 14px;font-family: 'BwModelicaSS01-Regular';"><?php echo $content[2]; ?></p>
+                        </div>
                     </div>
-                    <div class="row accordian-read-more" tabindex="1"><span>Read More</span>
-                    </div>
-                    <div class="row" id="expand-read-more">
-                        <p>more text goes here....
-                        </p>
+                    <div class="row"target="new">
+                        <a href="<?php echo strip_tags($content[3]); ?>" class="accordian-read-more" target="_blank">
+                            <h6>Read More</h6>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -77,8 +80,8 @@
         <div class="col-md-8">
             <p class="footer-title">© 2021 Larsen & Toubro Infotech Limited</p>
         </div>
+        <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular"></div>
         <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular"><a href="https://www.lntinfotech.com/privacy_policy/">Privacy Policy</a></div>
-        <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular"><a href="<?php echo get_site_url();?>/terms-of-service">Terms of Service</a></div>
     </div>
 </body>
 

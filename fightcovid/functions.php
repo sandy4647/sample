@@ -93,6 +93,7 @@ function import_cities_data() {
 		$csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
 		foreach ($csv_to_array as $key => $value) {				
 			if ($key > 1) {
+				if($value[6] && $value[7]){
 				$new = array (
 					'post_type' => 'Content Data',
 					'post_title' => $value[0]. "+" .$value[1]. "+" .$value[2]. "+" .$value[3]. "+" .$value[4]. "+" .$value[5],
@@ -107,6 +108,9 @@ function import_cities_data() {
 				add_post_meta($post_id, 'section', $value[5], true);
 				add_post_meta($post_id, 'link', $value[6], true);
 				add_post_meta($post_id, 'url', $value[7], true);
+				} else {
+				    echo "skip";
+				}
 			}
 		}
 		if ( $post_id ) {

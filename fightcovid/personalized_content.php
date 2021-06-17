@@ -7,6 +7,7 @@ get_header();
 <body>
 <?php
 $city = $_POST['city'];
+//echo $city;
 $age = $_POST['Age'];
 $livingstatus = $_POST['livingstatus'];
 $lifecycle_stage = $_POST['lifecycle_stage'];
@@ -16,13 +17,18 @@ $args = array (
 	//'orderby'			=> 'weight',
 	'order'				=> 'ASC',
 	'publish_status' => 'published',
+	'posts_per_page'   => -1,
 	'meta_query' => array (
-		array( 'key' => 'city', 'value' => $city, 'compare' => 'LIKE' ),
-		//array( 'key' => 'age_group', 'value' => $age, 'compare' => 'LIKE' ),
-		array( 'key' => 'living_status', 'value' => $livingstatus, 'compare' => 'LIKE' ),
-		array( 'key' => 'stage', 'value' => $lifecycle_stage, 'compare' => 'LIKE' ),
-		array( 'key' => 'co_morbidities', 'value' => $co_morbidities, 'compare' => 'LIKE' ),
-		'relation' => 'AND'
+	   	'relation' => 'AND',
+		 array( 'key' => 'city', 'value' => $city, 'compare' => 'LIKE' ),
+		 array( 'key' => 'living_status', 'value' => $livingstatus, 'compare' => 'LIKE' ),
+		 array( 'key' => 'stage', 'value' => $lifecycle_stage, 'compare' => 'LIKE' ),
+		 array( 'key' => 'co_morbidities', 'value' => $co_morbidities, 'compare' => 'LIKE' ),
+		array( 
+	    'relation' => 'OR',
+		 array( 'key' => 'age_group', 'value' => $age, 'compare' => 'LIKE' ),
+		 array( 'key' => 'age_group', 'value' => 'All', 'compare' => 'LIKE' )
+    	)	
 	)
 );			
 $query = new WP_Query($args);
@@ -38,6 +44,20 @@ if ($query->have_posts()) :
 	endwhile;
 endif;
 ?>
+<?php
+global $wpdb;
+	$cityname = "SELECT DISTINCT meta_value 
+	FROM   wp_posts p
+	INNER JOIN wp_postmeta pm
+	  ON (p.ID = pm.post_id) 
+	WHERE p.post_type = 'contentdata' 
+	AND (p.post_status = 'publish')
+	AND (pm.meta_key = 'city')";
+$cities = $wpdb->get_results( $cityname, OBJECT );	
+foreach ($cities as $value) {
+    $citynames[] = $value->meta_value;
+}
+?>
 
     <div class="row personalised-container" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/Banner_Images/All\ resource\ &\ personalized\ content\ Banner-common\ for\ both.png');">
         <div class="col-md-6" style="padding-top: 25px;">
@@ -45,26 +65,19 @@ endif;
             <h2 class="personalised-title">what we have here for you!</h2>
         </div>
     </div>
-	<form method="post" action="http://localhost/fightcovid/personalised-content/">
+	<form method="post" action="<?php echo get_site_url(); ?>/personalised-content/">
 		<div class="row personalised-form">
 			<div class="col-md-2">
 				<div class="mb-2">
 					<label for="inputCity" class="form-label">City<span style="color: #FF5E5E;">*</span></label>
 					<select id="inputCity" class="form-select" name="city" required>
 						<option hidden value="">Select your city</option>
-						<option value="Bangalore" <?php if($city == "Bangalore") echo "SELECTED";?> >Bangalore</option>
-						<option value="Chennai" <?php if($city == "Chennai") echo "SELECTED";?> >Chennai</option>
-						<option value="Mumbai" <?php if($city == "Mumbai") echo "SELECTED";?>>Mumbai</option>
+						<?php foreach($citynames as $value){ ?>
+						<option value="<?php echo $value; ?>" <?php if($city == $value) echo "SELECTED";?> ><?php echo $value; ?></option><?php
+						} ?>
 					</select>
 				</div>
 			</div>
-			<!--<div class="col-md-1">
-				<div class="mb-2">
-					<label for="inputZip" class="form-label">Pin Code<span style="color: #FF5E5E;">*</span></label>
-					<input type="text" class="form-control" id="inputZip" placeholder="Enter your Pincode"
-						style="color: #233E8B;border: 1px solid #889ECF;" required>
-				</div>
-			</div>-->
 			<div class="col-md-1">
 				<div class="mb-2">
 					<label for="inputAge" class="form-label">Age Group<span style="color: #FF5E5E;">*</span></label>
@@ -139,14 +152,18 @@ endif;
                     aria-labelledby="<?php echo $key; ?>-panel">
 					<?php
 						foreach($value as $name => $url){
+							$urllink = explode(',' , $url);
 					?>
                     <div class="accordion-body border-bottom" id="<?php echo $key; ?>">
                         <div class="row">
+							<?php if(!empty($name) AND $urllink){ ?>
                             <div class="col-md-10 padding-10">
                                 <h5><?php echo $name; ?></h5>
                             </div>
-                            <div class="col-md-2"><a href="<?php echo $url; ?>" class="btn read-btn" target="new">Read</a></div>
-                        </div>
+							<?php foreach($urllink as $urlpath){ ?>
+                            <div class="col-md-2"><a href="<?php echo $urlpath; ?>" class="btn read-btn" target="new">Read</a></div>
+                            <?php } } ?>
+						</div>
                     </div>
 					<?php  } ?>
                 </div>
@@ -158,9 +175,9 @@ endif;
         <div class="col-md-8">
             <p class="footer-title">© 2021 Larsen & Toubro Infotech Limited</p>
         </div>
-        <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular"><a href="https://www.lntinfotech.com/privacy_policy/">Privacy Policy</a>
+        <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular">
         </div>
-        <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular"><a href="<?php echo get_site_url();?>/terms-of-service">Terms of Service</a></div>
+        <div class="col-md-2" style="margin-top: 15px;font-family: BwModelicaSS01-Regular"><a href="https://www.lntinfotech.com/privacy_policy/">Privacy Policy</a></div>
     </div>
 </body>
 

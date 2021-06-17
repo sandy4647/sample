@@ -34,8 +34,8 @@
 			<p style="font-size: 14px;color: white;font-family: BwModelicaSS01-Regular">2021 Fight Covid Portal. All
 				rights are reserved.</p>
 		</div>
+		<div class="col-md-2" style="font-family: BwModelicaSS01-Regular"></div>
 		<div class="col-md-2" style="font-family: BwModelicaSS01-Regular"><a href="https://www.lntinfotech.com/privacy_policy/">Privacy Policy</a></div>
-		<div class="col-md-2" style="font-family: BwModelicaSS01-Regular"><a href="<?php echo get_site_url();?>/terms-of-service">Terms of Service</a></div>
 	</div>
 </body>
 
