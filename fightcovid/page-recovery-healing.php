@@ -1,8 +1,8 @@
 <?php get_header();?>
 <body>
 <?php $args = array(
-					'post_type'      => 'page',
-					'p'              => 90,
+					'post_type' => 'page',
+					'name' => 'recovery-healing',
 					'publish_status' => 'published',
 					);			 
 				    $query = new WP_Query($args);

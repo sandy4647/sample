@@ -1,8 +1,8 @@
 <?php get_header();?>
 <body>
 <?php $args = array(
-					'post_type'      => 'page',
-					'p'              => 78,
+					'post_type' => 'page',
+					'name' => 'stay-protected',
 					'publish_status' => 'published',
 					);			 
 				    $query = new WP_Query($args);

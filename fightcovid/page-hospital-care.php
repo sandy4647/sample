@@ -1,8 +1,8 @@
 <?php get_header();?>
 <body>
 <?php $args = array(
-					'post_type'      => 'page',
-					'p'              => 87,
+					'post_type' => 'page',
+					'name'  => 'hospital-care',
 					'publish_status' => 'published',
 					);			 
 				    $query = new WP_Query($args);

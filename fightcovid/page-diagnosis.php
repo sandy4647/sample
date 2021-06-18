@@ -1,8 +1,8 @@
 <?php get_header();?>
 <body>
 <?php $args = array(
-					'post_type'      => 'page',
-					'p'              => 84,
+					'post_type' => 'page',
+					'name'  => 'diagnosis',
 					'publish_status' => 'published',
 					);			 
 				    $query = new WP_Query($args);
@@ -11,7 +11,9 @@
 							$query->the_post() ;
 							$fields = get_fields();
 					    endwhile;  
-				    endif;    		 
+							endif;    	
+
+
 ?>      
     <div class="row stay-protected-container" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/Banner_Images/All\ resource\ &\ personalized\ content\ Banner-common\ for\ both.png');">
         <div class="col-md-6" style="padding-top: 25px;">

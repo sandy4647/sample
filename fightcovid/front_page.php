@@ -11,8 +11,9 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/Banner_Images/Main Banner.png" class="d-block w-100" alt="...">
 					<div class="carousel-caption-img1 d-none d-md-block">
 						<h2 class="carousel-title">Together, We Can !</h2>
-						<h2 class="carousel-subtitle">In this fight, we are all together</h2>
+						<h2 class="carousel-subtitle"></h2>
 						<p class="carousel-para">
+                                                        In this fight, we are all together<br>
 							Browse through the curated list of<br>
 							important resources and esential<br>
 							information related to Covid-19, and<br>
@@ -79,8 +80,8 @@ foreach ($city as $value) {
 
 		<div class="box-overlay">
 			<div class="row content-form">
-				<div class="col-md-12 form-title"><b>Get Personalized View<br> of Resources</b></div>
-				<div class="col-md-12 form-subtitle">You data is Safe with us. It won't be saved</div>
+				<div class="col-md-12 form-title"><b>Get Personalized Content</b></div>
+				<div class="col-md-12 form-subtitle">Let us know a little more about yourself</div>
 				<form class="col-md-12 g-3" style="margin-left: 5px;padding-right: 15px;font-size: 13px;" method="post" action="<?php echo get_site_url(); ?>/personalised-content/">
 					<div class="mb-2">
 						<label for="inputCity" class="form-label">City<span style="color: #FF5E5E;">*</span></label>
@@ -92,7 +93,7 @@ foreach ($city as $value) {
 						</select>
 					</div>
 					<div class="mb-2">
-						<label for="inputAge" class="form-label">Age Group<span style="color: #FF5E5E;">*</span></label>
+						<label for="inputAge" class="form-label">Age group<span style="color: #FF5E5E;">*</span></label>
 						<select id="inputAge" class="form-select" name="Age" required>
 							<option hidden value="">Select your Age Group</option>
 							<option value="18-44">18-44 Years</option>
@@ -101,7 +102,7 @@ foreach ($city as $value) {
 						</select>
 					</div>
 					<div class="mb-2">
-						<label for="inputStatus" class="form-label">Living Status<span
+						<label for="inputStatus" class="form-label">Living status<span
 								style="color: #FF5E5E;">*</span></label>
 						<select id="inputStatus" class="form-select" name="livingstatus" required>
 							<option hidden value="">Select your Living Status</option>
@@ -120,18 +121,19 @@ foreach ($city as $value) {
 						</select>
 					</div>
 					<div class="mb-2">
-						<label for="inputStage" class="form-label">Covid Lifecycle Stage<span
+						<label for="inputStage" class="form-label">Covid lifecycle stage<span
 								style="color: #FF5E5E;">*</span></label>
 						<select id="inputStge" class="form-select" name="lifecycle_stage" required>
 							<option hidden value="">Select your Covid Lifecycle Stage</option>
 							<option value="Precaution">Precaution</option>
 							<option value="Symptom Onset/Diagnosis">Symptoms Onset / Diagnosis</option>
 							<option value="Home Quarantine">Home Quarantine</option>
+                                                        <option value="Hospitalization">Hospitalization</option>
 							<option value="Recovery">Recovery</option>
 						</select>
 					</div>
 					<div class="mb-2 get-content-btn" style="text-align: center;padding-top: 15px;">
-						<button type="submit" class="btn btn-primary">Show me results</button>
+						<button type="submit" name="submit" class="btn btn-primary">Show me results</button>
 					</div>
 				</form>
 			</div>
